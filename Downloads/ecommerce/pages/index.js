@@ -7,7 +7,7 @@ const Home = () => {
                 <HeroBanner />
                 <div className='p'>
                     <a>Best Seller Products</a>
-                    <p>Shoes</p>
+                    <p>teste</p>
                 </div>
             </div>
             <div className='products-container'>
