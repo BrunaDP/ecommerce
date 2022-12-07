@@ -25,7 +25,6 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.6.0",
-    "react-state-context": "^1.0.0",
     "sanity": "^2.33.2",
     "stripe": "^11.1.0",
     "typescript": "4.8.4"
