@@ -5,4 +5,4 @@ Thanks for the time!
 # requisites
 Para iniciarlo hay que correr: "npm run dev"
 
-<img src="image\imagen.png" width="400"/>
+<img src="image\imagen.png" width="894" heigth ="auto"/>
