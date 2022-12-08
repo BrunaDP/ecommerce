@@ -1,24 +1,43 @@
-import confetti from 'canvas-confetti';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { BsBagCheckFill } from 'react-icons/bs';
 
-export const runFireworks = () => {
-    var duration = 5 * 1000;
-    var animationEnd = Date.now() + duration;
-    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+import { useStateContext } from '../context/StateContext';
+import { runFireworks } from '../lib/utils';
 
-    function randomInRange(min, max) {
-        return Math.random() * (max - min) + min;
-    }
+const Success = () => {
+    const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
 
-    var interval = setInterval(function () {
-        var timeLeft = animationEnd - Date.now();
+    useEffect(() => {
+        localStorage.clear();
+        setCartItems([]);
+        setTotalPrice(0);
+        setTotalQuantities(0);
+        runFireworks();
+    }, []);
 
-        if (timeLeft <= 0) {
-            return clearInterval(interval);
-        }
-
-        var particleCount = 50 * (timeLeft / duration);
-        // since particles fall down, start a bit higher than random
-        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-        confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
-    }, 250);
+    return (
+        <div className="success-wrapper">
+            <div className="success">
+                <p className="icon">
+                    <BsBagCheckFill />
+                </p>
+                <h2>Thank you for your order!</h2>
+                <p className="email-msg">Check your email inbox for the receipt.</p>
+                <p className="description">
+                    If you have any questions, please email
+                    <a className="email" href="mailto:order@example.com">
+                        order@example.com
+                    </a>
+                </p>
+                <Link href="/">
+                    <button type="button" width="300px" className="btn">
+                        Continue Shopping
+                    </button>
+                </Link>
+            </div>
+        </div>
+    )
 }
+
+export default Success
