@@ -1,8 +1,8 @@
 # ecommerce
-bienvenido a mi ecommerce proyecto,lo hice como un proyecto en solitario y usando sanity,react,stripe y siguiendo el tutorial de JavaScript Mastery de sanity ecommerce.
+welcome to my ecommerce project, i made it as a solo project and using sanity,react,stripe and following the sanity ecommerce javascript mastery tutorial.
 Thanks for the time!
 
 # requisites
-Para iniciarlo hay que correr: "npm run dev"
+To start it you have to run: "npm run dev"
 
 <img src="image\imagen.png" width="894" heigth ="auto"/>
